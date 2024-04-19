@@ -1,4 +1,4 @@
 # Tech-Connect
 
-## AHHHHHHHHHHHHHHHHH - kaleb 1st commit(delete later)
+## kaleb 1st commit(delete later)
 ## sim
