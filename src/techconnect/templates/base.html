@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="An app that uses your interest to get you involved around the campus of Louisiana Tech.">
+	<meta name="author" content="Kaleb McHenry, Simeon McFarland, Samuel Cook">
+	<meta name="robots" content="index, follow">
+	<title>{% block title %}{% endblock %} - TechConnect</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+
+<body>
+	<nav>
+		<div class="logo-container">
+			<img src="https://placehold.co/75x75" alt="placeholder">
+		</div>
+		<h1>TechConnect</h1>
+	</nav>
+
+	<section class="content">
+		{# <header>
+			{% block header %}{% endblock %}
+		</header> #}
+
+		{% for message in get_flashed_messages() %}
+		<div class="flash">{{ message }}</div>
+		{% endfor %}
+
+		{% block content %}{% endblock %}
+	</section>
+</body>
+
+</html>

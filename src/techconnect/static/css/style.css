@@ -1,0 +1,25 @@
+html {
+    font-family: sans-serif;
+    color: #FFF;
+}
+
+body {
+    background-image: url("https://www.latech.edu/wp-content/uploads/2022/07/Aerial-Card-scaled.jpg");
+    background-size: cover;
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #003087;
+    height: 95px;
+}
+
+.container {
+    display: flex;
+    background-color: #000;
+}
+

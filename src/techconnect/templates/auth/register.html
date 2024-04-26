@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        {# {% block header %} #}
+        <h1>{% block title %}Create Account{% endblock %}</h1>
+        {# {% endblock %} #}
+        <p class="returning">Returning? Click here to <a href="{{ url_for('auth.login') }}">sign in</a></p>
+        <form method="post">
+            <label for="email">Enter your email</label>
+            <input type="email" name="email" id="email" required>
+            <label for="username">Create username</label>
+            <input for="username" id="username" required>
+            <label for="password">Create password</label>
+            <input type="password" name="password" id="password" required>
+            <label for="confirm">Confirm password</label>
+            <input type="password" name="confirm" id="password" required>
+            <input type="submit" id="submit-btn" value="Register">
+        </form>
+    </div>
+{% endblock %}
