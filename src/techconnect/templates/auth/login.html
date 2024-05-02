@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "authbase.html" %}
 
 {% block content %}
     <div class="container">
@@ -7,9 +7,9 @@
         {# {% endblock %} #}
         <p>New user? Click here to <a href="{{ url_for('auth.register') }}">register</a></p>
         <form method="post">
-            <label for="username">Create username</label>
-            <input for="username" id="username" required>
-            <label for="password">Create password</label>
+            <label for="username">Enter username</label>
+            <input name="username" id="username" required>
+            <label for="password">Enter password</label>
             <input type="password" name="password" id="password" required>
             <input type="submit" class="submit-btn" value="Sign In">
         </form>

@@ -2,6 +2,8 @@ DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Interests;
 DROP TABLE IF EXISTS UserInterests;
 DROP TABLE IF EXISTS Clubs;
+DROP TABLE IF EXISTS ClubInterests;
+DROP TABLE IF EXISTS Events;
 
 CREATE TABLE Users (
     id INTEGER PRIMARY KEY,
@@ -40,9 +42,9 @@ CREATE TABLE ClubInterests (
 
 CREATE TABLE Events (
     eventID INTEGER PRIMARY KEY,
+    clubID INTEGER,
     eventName TEXT NOT NULL,
     description TEXT,
     date DATE,
-    clubID INTEGER,
     FOREIGN KEY (clubID) REFERENCES Clubs (clubID)
 );
