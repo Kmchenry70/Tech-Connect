@@ -8,3 +8,6 @@ from techconnect.db import get_db
 
 bp = Blueprint('interests', __name__, url_prefix='/interests')
 
+@app.route('/interests')
+def interests():
+    return 
