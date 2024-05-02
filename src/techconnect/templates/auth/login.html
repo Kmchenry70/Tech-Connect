@@ -5,13 +5,13 @@
         {# {% block header %} #}
         <h1>{% block title %}Sign in{% endblock %}</h1>
         {# {% endblock %} #}
-        <p class="returning">New user? Click here to <a href="{{ url_for('auth.register') }}">register</a></p>
+        <p>New user? Click here to <a href="{{ url_for('auth.register') }}">register</a></p>
         <form method="post">
             <label for="username">Create username</label>
             <input for="username" id="username" required>
             <label for="password">Create password</label>
             <input type="password" name="password" id="password" required>
-            <input type="submit" id="submit-btn" value="Sign In">
+            <input type="submit" class="submit-btn" value="Sign In">
         </form>
     </div>
 {% endblock %}
