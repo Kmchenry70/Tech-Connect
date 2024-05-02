@@ -77,10 +77,7 @@ def create_app(test_config=None):
     try:
         os.makedirs(app.instance_path)
     except OSError:
-        pass
-
-    # Make this the homepage, 
-     
+        pass  
 
     from . import db
     db.init_app(app)
