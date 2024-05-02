@@ -24,6 +24,7 @@ def register():
             error = 'Email is required.'
         elif not password:
             error = 'Password is required.'
+            
 
         if error is None:
             try:

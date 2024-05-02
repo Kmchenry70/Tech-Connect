@@ -79,10 +79,10 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a page that says hello (add /hello to the url)
-    @app.route('/hello')
-    def hello():
-        return 'Hello, world!'
+    # Make this the homepage, 
+    @app.route('/')
+    def home():
+        return 
 
     from . import db
     db.init_app(app)
