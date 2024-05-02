@@ -11,10 +11,12 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
+    template_name = 'auth/register.html'
     if request.method == 'POST':
         username = request.form['username']
         email = request.form['email']
         password = request.form['password']
+        confirm_password = request.form['confirm']
         db = get_db()
         error = None
 
@@ -24,7 +26,8 @@ def register():
             error = 'Email is required.'
         elif not password:
             error = 'Password is required.'
-            
+        elif password != confirm_password:
+            error = 'Passwords do not match'
 
         if error is None:
             try:
@@ -40,11 +43,12 @@ def register():
         
         flash(error)
 
-    return render_template('auth/register.html')
+    return render_template(template_name, template_name=template_name)
 
 
 @bp.route('/login', methods=('GET', 'POST'))
 def login():
+    template_name = 'auth/login.html'
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -66,7 +70,7 @@ def login():
 
         flash(error)
 
-    return render_template('auth/login.html')
+    return render_template(template_name, template_name=template_name)
 
 
 # checks to see if a user was logged in prior (cookies)
