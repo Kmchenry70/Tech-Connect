@@ -9,8 +9,11 @@ from techconnect.db import get_db
 bp = Blueprint('interests', __name__, url_prefix='/interests')
 
 bp.route('/route', methods=('GET', 'POST'))
+
+"""
 def interests(): 
     template_name = '/interests/select'
     if request.method == 'POST': 
+"""
         
 
