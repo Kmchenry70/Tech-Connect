@@ -82,7 +82,7 @@ def create_app(test_config=None):
     # Make this the homepage, 
     @app.route('/')
     def home():
-        return 
+        return
 
     from . import db
     db.init_app(app)
