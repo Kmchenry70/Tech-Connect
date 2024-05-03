@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>{% block title %}Select your interest catagories{% endblock %}</title>
-</head>
-<body>
-    <h1>
-        <b>Interests</b>
-    </h1>
+{% extends "appbase.html" %}
+
+{% block content %}
+    <h2>{% block title %}Select your Interests{% endblock %}</h2>
     <ul>
         <label for="interests"> Choose some interests</label>
         <form id="make_some_checkboxes" method="post">
@@ -33,5 +27,8 @@
                 <option value="Airsoft">Louisiana Tech Airsoft Organization</option>
             </select>
         </form>
+        <form method="post">
+            <input type="submit" value="next route(test)" />
+        </form>
     </ul>
-</body>
+{% endblock %}
