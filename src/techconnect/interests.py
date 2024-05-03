@@ -6,13 +6,15 @@ from werkzeug.exceptions import abort
 from techconnect.auth import login_required
 from techconnect.db import get_db
 
-bp = Blueprint('interests', __name__, url_prefix='/interests')
+bp = Blueprint('interests', __name__) # url_prefix='/interests'
 
-bp.route('/interests', methods=('GET', 'POST'))
-"""
+@bp.route('/interests', methods=('GET', 'POST'))
 def interests(): 
-    template_name = '/interests/select'
-    if request.method == 'POST': 
-"""
+    template_name = 'app/interests.html'
+    if request.method == 'POST':
+        # submit = 
+        return redirect(url_for("home.home"))
+
+    return render_template(template_name, template_name=template_name)
         
 
