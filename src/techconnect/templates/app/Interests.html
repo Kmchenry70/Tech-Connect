@@ -6,25 +6,33 @@
         <label for="interests"> Choose some interests</label>
         <form id="make_some_checkboxes" method="post">
             <select name="sports" id="0">
-                <option value="football">Football</option>
-                <option value="baseball">Baseball</option>
-                <option value="basketball">Basketball</option>
-                <option value="soccer">Soccer</option>
+                <optgroup label="Sports">
+                    <option value="football">Football</option>
+                    <option value="baseball">Baseball</option>
+                    <option value="basketball">Basketball</option>
+                    <option value="soccer">Soccer</option>
+                </optgroup>
             </select>
             <select name="ministries" id="1">
-                <option value="XA">Chi Alpha(XA)</option>
-                <option value="ACTS">Association of Catholic Tech Students (ACTS)</option>
-                <option valye="BCM">Baptist College Ministry (BCM)</option>
+                <optgroup label="Ministries">
+                    <option value="XA">Chi Alpha(XA)</option>
+                    <option value="ACTS">Association of Catholic Tech Students (ACTS)</option>
+                    <option valye="BCM">Baptist College Ministry (BCM)</option>
+                </optgroup>
             </select>
             <select name="STEM" id="2">
-                <option value="ENSA">Engineering and Science Association</option>
-                <option value="SOWE">Society of Women Engineers</option>
-                <option value="ACE">Association of Cyber Engineers</option>
+                <optgroup label="STEM">
+                    <option value="ENSA">Engineering and Science Association</option>
+                    <option value="SOWE">Society of Women Engineers</option>
+                    <option value="ACE">Association of Cyber Engineers</option>
+                </optgroup>
             </select>
             <select name="clubs" id="3">
-                <option value="Esports">Esports</option>
-                <option value="Chess">Chess Club</option>
-                <option value="Airsoft">Louisiana Tech Airsoft Organization</option>
+                <optgroup label="clubs">
+                    <option value="Esports">Esports</option>
+                    <option value="Chess">Chess Club</option>
+                    <option value="Airsoft">Louisiana Tech Airsoft Organization</option>
+                </optgroup>
             </select>
         </form>
         <form method="post">
