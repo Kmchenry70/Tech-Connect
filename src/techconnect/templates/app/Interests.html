@@ -5,35 +5,44 @@
     <ul>
         <label for="interests"> Choose some interests</label>
         <form id="make_some_checkboxes" method="post">
-            <select name="sports" id="0" type="make_some_checkboxes">
-                <optgroup label="Sports">
-                    <option value="football">Football</option>
-                    <option value="baseball">Baseball</option>
-                    <option value="basketball">Basketball</option>
-                    <option value="soccer">Soccer</option>
-                </optgroup>
-            </select>
-            <select name="ministries" id="1">
-                <optgroup label="Ministries">
-                    <option value="XA">Chi Alpha(XA)</option>
-                    <option value="ACTS">Association of Catholic Tech Students (ACTS)</option>
-                    <option valye="BCM">Baptist College Ministry (BCM)</option>
-                </optgroup>
-            </select>
-            <select name="STEM" id="2">
-                <optgroup label="STEM">
-                    <option value="ENSA">Engineering and Science Association</option>
-                    <option value="SOWE">Society of Women Engineers</option>
-                    <option value="ACE">Association of Cyber Engineers</option>
-                </optgroup>
-            </select>
-            <select name="clubs" id="3">
-                <optgroup label="clubs">
-                    <option value="Esports">Esports</option>
-                    <option value="Chess">Chess Club</option>
-                    <option value="Airsoft">Louisiana Tech Airsoft Organization</option>
-                </optgroup>
-            </select>
+            <fieldset>
+                <legend>Sports</legend>
+                <input type="checkbox" id="football" name="sports[]" value="football">
+                <label for="football">Football</label><br>
+                <input type="checkbox" id="baseball" name="sports[]" value="baseball">
+                <label for="baseball">Baseball</label><br>
+                <input type="checkbox" id="basketball" name="sports[]" value="basketball">
+                <label for="basketball">Basketball</label><br>
+                <input type="checkbox" id="soccer" name="sports[]" value="soccer">
+                <label for="soccer">Soccer</label>
+            </fieldset>
+            <fieldset>
+                <legend>Ministries</legend>
+                <input type="checkbox" id="XA" name="ministries[]" value="XA">
+                <label for="XA">Chi Alpha (XA)</label><br>
+                <input type="checkbox" id="ACTS" name="ministries[]" value="ACTS">
+                <label for="ACTS">Association of Catholic Tech Students (ACTS)</label><br>
+                <input type="checkbox" id="BCM" name="ministries[]" value="BCM">
+                <label for="BCM">Baptist College Ministry (BCM)</label>
+            </fieldset>
+            <fieldset>
+                <legend>STEM Clubs</legend>
+                <input type="checkbox" id="ENSA" name="STEM[]" value="ENSA">
+                <label for="ENSA">Engineering and Science Association</label><br>
+                <input type="checkbox" id="SOWE" name="STEM[]" value="SOWE">
+                <label for="SOWE">Society of Women Engineers</label><br>
+                <input type="checkbox" id="ACE" name="STEM[]" value="ACE">
+                <label for="ACE">Association of Cyber Engineers</label>
+            </fieldset>
+            <fieldset>
+                <legend>Clubs</legend>
+                <input type="checkbox" id="Esports" name="clubs[]" value="Esports">
+                <label for="Esports">Esports</label><br>
+                <input type="checkbox" id="Chess" name="clubs[]" value="Chess">
+                <label for="Chess">Chess Club</label><br>
+                <input type="checkbox" id="Airsoft" name="clubs[]" value="Airsoft">
+                <label for="Airsoft">Louisiana Tech Airsoft Organization</label>
+            </fieldset>
         </form>
         <form method="post">
             <input type="submit" value="next route(test)" />
