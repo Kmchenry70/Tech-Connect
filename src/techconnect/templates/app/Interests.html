@@ -1,51 +1,51 @@
 {% extends "appbase.html" %}
 
 {% block content %}
-    <h2>{% block title %}Select your Interests{% endblock %}</h2>
+    <h2>{% block title %}Select Some things you are interested in{% endblock %}</h2>
     <ul>
-        <label for="interests"> Choose some interests</label>
+        <label for="interests"> Select at least one: </label>
         <form id="make_some_checkboxes" method="post">
             <fieldset>
                 <legend>Sports</legend>
-                <input type="checkbox" id="football" name="sports[]" value="football">
+                <input type="checkbox" id="football" name="sports" value="football">
                 <label for="football">Football</label><br>
-                <input type="checkbox" id="baseball" name="sports[]" value="baseball">
+                <input type="checkbox" id="baseball" name="sports" value="baseball">
                 <label for="baseball">Baseball</label><br>
-                <input type="checkbox" id="basketball" name="sports[]" value="basketball">
+                <input type="checkbox" id="basketball" name="sports" value="basketball">
                 <label for="basketball">Basketball</label><br>
-                <input type="checkbox" id="soccer" name="sports[]" value="soccer">
+                <input type="checkbox" id="soccer" name="sports" value="soccer">
                 <label for="soccer">Soccer</label>
             </fieldset>
             <fieldset>
                 <legend>Ministries</legend>
-                <input type="checkbox" id="XA" name="ministries[]" value="XA">
+                <input type="checkbox" id="XA" name="ministries" value="XA">
                 <label for="XA">Chi Alpha (XA)</label><br>
-                <input type="checkbox" id="ACTS" name="ministries[]" value="ACTS">
+                <input type="checkbox" id="ACTS" name="ministries" value="ACTS">
                 <label for="ACTS">Association of Catholic Tech Students (ACTS)</label><br>
-                <input type="checkbox" id="BCM" name="ministries[]" value="BCM">
+                <input type="checkbox" id="BCM" name="ministries" value="BCM">
                 <label for="BCM">Baptist College Ministry (BCM)</label>
             </fieldset>
             <fieldset>
                 <legend>STEM Clubs</legend>
-                <input type="checkbox" id="ENSA" name="STEM[]" value="ENSA">
+                <input type="checkbox" id="ENSA" name="STEM" value="ENSA">
                 <label for="ENSA">Engineering and Science Association</label><br>
-                <input type="checkbox" id="SOWE" name="STEM[]" value="SOWE">
+                <input type="checkbox" id="SOWE" name="STEM" value="SOWE">
                 <label for="SOWE">Society of Women Engineers</label><br>
-                <input type="checkbox" id="ACE" name="STEM[]" value="ACE">
+                <input type="checkbox" id="ACE" name="STEM" value="ACE">
                 <label for="ACE">Association of Cyber Engineers</label>
             </fieldset>
             <fieldset>
                 <legend>Clubs</legend>
-                <input type="checkbox" id="Esports" name="clubs[]" value="Esports">
+                <input type="checkbox" id="Esports" name="clubs" value="Esports">
                 <label for="Esports">Esports</label><br>
-                <input type="checkbox" id="Chess" name="clubs[]" value="Chess">
+                <input type="checkbox" id="Chess" name="clubs" value="Chess">
                 <label for="Chess">Chess Club</label><br>
-                <input type="checkbox" id="Airsoft" name="clubs[]" value="Airsoft">
+                <input type="checkbox" id="Airsoft" name="clubs" value="Airsoft">
                 <label for="Airsoft">Louisiana Tech Airsoft Organization</label>
             </fieldset>
         </form>
         <form method="post">
-            <input type="submit" value="next route(test)" />
+            <input type="submit" value="Submit" />
         </form>
     </ul>
 {% endblock %}
