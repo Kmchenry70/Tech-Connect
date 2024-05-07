@@ -9,7 +9,20 @@
         <meta name="robots" content="index, follow">
         <title>{% block title %}{% endblock %} - TechConnect</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
-        {# <script src="{{ url_for('static', filename='js/[insert].js')}}"></script> #}
+        <script>
+            window.onclick = (event) => {
+                if (!event.target.matches('.profile-icon')) {
+                    let dropdowns = document.getElementsByClassName('profile-dropdown')
+                    for (let i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.style.display === 'block') {
+                            openDropdown.style.display = 'none';
+                        }
+                    }
+                }
+            }
+        </script>
+
     </head>
 
     <body>
@@ -17,7 +30,14 @@
             <div class="logo-container">
                 <img src="30dc206bb841015ed02ed8a5c8e0f083.jpg/55x55" alt="placeholder">
             </div>
-            <h1>TechConnect</h1>
+            <h1 class="navheader">TechConnect</h1>
+            <div class="profile-icon">
+                <img src="" alt="Profile" width="50" height="50">
+                <div class="profile-dropdown">
+                    <a href="#">My Profile</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
 	    </nav>
 
         <header class="welcome">Welcome, {{ username }} </header>

@@ -25,6 +25,10 @@ nav {
     height: 65px;
 }
 
+.navheader {
+    color: #fff;
+}
+
 h2 {
     color: #000;
     text-align: center;
