@@ -23,10 +23,8 @@ def interests():
         error = None
 
         # Compile all interests into one list
-        interests = sports + ministries + STEM + clubs
+        interests = sports + ministries + stem + recreation
         
-
-
         # This code will run though and check to see if there has been anything filled for these interest. 
         # If none of the interests have at least one selection, then it will store a message that reminds the user to select at least one.
         if len(interests) == 0: 
