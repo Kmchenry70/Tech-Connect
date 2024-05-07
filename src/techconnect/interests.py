@@ -16,18 +16,18 @@ def interests():
     if request.method == 'POST':
         sports = request.form.getlist('sports')
         ministries = request.form.getlist('ministries')
-        STEM = request.form.getlist('STEM')
+        stem = request.form.getlist('STEM')
         clubs = request.form.getlist('clubs')
 
         db = get_db()
         error = None
 
         # Compile all interests into one list
-        interests = sports + ministries + STEM + clubs
+        interests = sports + ministries + stem + clubs
         
         # This code will run though and check to see if there has been anything filled for these interest. 
         # If none of the interests have at least one selection, then it will store a message that reminds the user to select at least one.
-        if len(interests) == 0: 
+        if not interests: 
             error = 'Need to select at least one of the options.'
 
         else: 
