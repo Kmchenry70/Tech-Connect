@@ -8,6 +8,7 @@ from techconnect.db import get_db
 
 bp = Blueprint('interests', __name__) # url_prefix='/interests'
 
+@login_required
 @bp.route('/interests', methods=('GET', 'POST'))
 def interests(): 
     template_name = 'app/interests.html'
