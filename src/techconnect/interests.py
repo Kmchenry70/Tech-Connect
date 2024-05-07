@@ -12,6 +12,7 @@ bp = Blueprint('interests', __name__) # url_prefix='/interests'
 @bp.route('/interests', methods=('GET', 'POST'))
 def interests(): 
     template_name = 'app/interests.html'
+    username = g.user['username']
     if request.method == 'POST':
         sports = request.form.getlist('sports')
         ministries = request.form.getlist('ministries')
@@ -20,12 +21,16 @@ def interests():
 
         db = get_db()
         error = None
+
+        # Compile all interests into one list
+        interests = sports + ministries + STEM + clubs
+        
         # This code will run though and check to see if there has been anything filled for these interest. 
         # If none of the interests have at least one selection, then it will store a message that reminds the user to select at least one.
-        if not (sports or ministries or STEM or clubs): 
+        if len(interests) == 0: 
             error = 'Need to select at least one of the options.'
 
-        elif error is None: 
+        else: 
             # Need to store data from sports, ministries, STEM, and clubs into the user's database
             user_id = g.user['id']
 
@@ -35,12 +40,7 @@ def interests():
 
                 # Clear existing interests
                 db.execute(
-                    'DELETE FROM user_interests WHERE user_id = ?',
-                    (user_id,)
-                )
-                
-                # Compile all interests into one list
-                interests = sports + ministries + STEM + clubs
+                    'DELETE FROM user_interests WHERE user_id = ?', (user_id,))
                 
                 # Insert new interests
                 for interest in interests:
@@ -55,10 +55,10 @@ def interests():
                 # Roll back in case of error
                 db.rollback()
                 raise e
-
+            
             return redirect(url_for("home.home"))
 
         flash(error)
 
-    return render_template(template_name, template_name=template_name)
+    return render_template(template_name, username=username, template_name=template_name)
         
