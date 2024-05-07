@@ -12,10 +12,12 @@ bp = Blueprint('home', __name__)
 
 @bp.route('/')
 def home():
+    username = g.user['username']
+    # clubs = Clubs.query.all()
     template_name = 'app/home.html'
 
     clubs = ['ACE', 'SWE', "IEEE", 'ACM']
 
     # events = Events.query.all()
 
-    return render_template(template_name, template_name=template_name)
+    return render_template("app/home.html", username=username)
