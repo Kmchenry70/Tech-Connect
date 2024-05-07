@@ -39,7 +39,7 @@ def register():
             except db.IntegrityError:
                 error = f"User {username} is already registered."
             else:
-                return redirect(url_for("home.home"))
+                return redirect(url_for("interests.interests"))
         
         flash(error)
 
@@ -92,7 +92,7 @@ def login_required(view):
     def wrapped_view(**kwargs):
         if g.user is None:
             return redirect(url_for('auth.login'))
-
+            
         return view(**kwargs)
 
     return wrapped_view

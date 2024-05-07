@@ -1,5 +1,5 @@
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, url_for
+    Blueprint, flash, g, redirect, render_template, request, url_for, session
 )
 from werkzeug.exceptions import abort
 
@@ -8,21 +8,23 @@ from techconnect.db import get_db
 
 bp = Blueprint('interests', __name__) # url_prefix='/interests'
 
-@login_required
 @bp.route('/interests', methods=('GET', 'POST'))
+@login_required
 def interests(): 
     template_name = 'app/interests.html'
     if request.method == 'POST':
         sports = request.form.getlist('sports')
         ministries = request.form.getlist('ministries')
-        STEM = request.form.getlist('STEM')
-        clubs = request.form.getlist('clubs')
+        stem = request.form.getlist('stem')
+        recreation = request.form.getlist('recreation')
 
         db = get_db()
         error = None
+
+
         # This code will run though and check to see if there has been anything filled for these interest. 
         # If none of the interests have at least one selection, then it will store a message that reminds the user to select at least one.
-        if not (sports or ministries or STEM or clubs): 
+        if not (sports or ministries or stem or recreation): 
             error = 'Need to select at least one of the options.'
 
         if error is None: 
@@ -35,19 +37,31 @@ def interests():
 
                 # Clear existing interests
                 db.execute(
-                    'DELETE FROM user_interests WHERE user_id = ?',
+                    'DELETE FROM UserInterests WHERE id = ?',
                     (user_id,)
                 )
                 
                 # Compile all interests into one list
-                interests = sports + ministries + STEM + clubs
+                interests = sports + ministries + stem + recreation
                 
+                print(interests)
+
                 # Insert new interests
                 for interest in interests:
-                    db.execute(
-                        'INSERT INTO user_interests (user_id, interest) VALUES (?, ?)',
-                        (user_id, interest)
-                    )
+
+                    # get interest from Interests table
+                    interest_row = db.execute(
+                        'SELECT interestID FROM Interests WHERE interestName = ?',
+                        (interest,)
+                    ).fetchone()
+                    
+                    # insert
+                    if interest_row:
+                        interest_id = interest_row['interestID']
+                        db.execute(
+                            'INSERT INTO UserInterests (id, interestID) VALUES (?, ?)',
+                            (user_id, interest_id)
+                        )
                 
                 # Commit transaction
                 db.commit()

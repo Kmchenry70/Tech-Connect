@@ -14,7 +14,7 @@ CREATE TABLE Users (
 
 CREATE TABLE Interests (
     interestID INTEGER PRIMARY KEY,
-    interestType TEXT UNIQUE NOT NULL,
+    interestType TEXT NOT NULL,
     interestName TEXT UNIQUE NOT NULL
 );
 

@@ -20,11 +20,11 @@
             <h1>TechConnect</h1>
 	    </nav>
 
-        <header class="welcome">Welcome, [username]</header>
+        <header class="welcome">Welcome, {{ g.user.username }}</header>
 
-        {% for message in get_flashed_messages() %}
+        {# {% for message in get_flashed_messages() %}
 		    <div class="flash">{{ message }}</div>
-	    {% endfor %}
+	    {% endfor %} #}
 
         {% block content %}{% endblock %}
     </body>
