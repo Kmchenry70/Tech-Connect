@@ -25,7 +25,7 @@ def interests():
         if not (sports or ministries or STEM or clubs): 
             error = 'Need to select at least one of the options.'
 
-        if error is None: 
+        elif error is None: 
             # Need to store data from sports, ministries, STEM, and clubs into the user's database
             user_id = g.user['id']
 
