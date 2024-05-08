@@ -67,7 +67,8 @@ def login():
         if error is None:
             session.clear()
             session['user_id'] = user['id']
-            return redirect(url_for('interests.interests'))
+            # I could be mistaken but I made it where this redirects the current user to the home page since they have an account
+            return redirect(url_for('home.home'))
 
         flash(error)
 
