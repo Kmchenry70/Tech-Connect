@@ -13,8 +13,9 @@ bp = Blueprint('interests', __name__) # url_prefix='/interests'
 def interests(): 
     template_name = 'app/interests.html'
     username = g.user['username']
+
     if request.method == 'POST':
-        sports = request.form.getlist('sports')
+        sports = request.form.getlist('sport')
         ministries = request.form.getlist('ministries')
         stem = request.form.getlist('stem')
         recreation = request.form.getlist('recreation')
