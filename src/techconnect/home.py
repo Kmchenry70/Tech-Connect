@@ -10,6 +10,7 @@ from techconnect.db import get_db
 
 bp = Blueprint('home', __name__)
 
+@login_required
 @bp.route('/')
 def home():
     template_name = 'app/home.html'
