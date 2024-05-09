@@ -4,7 +4,7 @@
     <h2>{% block title %}Campus Activities{% endblock %}</h2>
     <div class="club-container">
         {% for club_name in club_names %}
-            <a href="#" class="club-link">
+            <a href="{{ url_for('events.events') }}" class="club-link">
                 <div class="club-card">
                     <div class="club-name">{{ club_name }}</div>
                 </div>

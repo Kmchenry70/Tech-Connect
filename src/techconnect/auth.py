@@ -10,8 +10,6 @@ from techconnect.db import get_db
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
-bp.secret_key = 'dev'
-
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
     template_name = 'auth/register.html'

@@ -1,0 +1,22 @@
+{% extends "auxbase.html" %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+<header class="profile-head">Your Profile</header>
+
+<div class="profile-pic">
+    <img src="{{ url_for('static', filename='img/profile-pic.png')}}">
+</div>
+
+<h2 class="username">{{ username }}</h2>
+
+<div class="interests-container">
+    <h3 class="interests-head">Your Interests</h3>
+    <ul>
+        {% for interest in interests %}
+            <li>{{ interest }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
