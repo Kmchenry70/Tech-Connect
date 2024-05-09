@@ -10,6 +10,8 @@ from techconnect.db import get_db
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
+bp.secret_key = 'dev'
+
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
     template_name = 'auth/register.html'
@@ -74,6 +76,11 @@ def login():
 
     return render_template(template_name, template_name=template_name)
 
+@bp.route('/logout')
+def logout():
+    # remove the username from the session if it's there
+    session.pop('username', None)
+    return redirect(url_for('auth.login'))
 
 # checks to see if a user was logged in prior (cookies)
 @bp.before_app_request

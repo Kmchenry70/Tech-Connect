@@ -13,15 +13,28 @@ bp = Blueprint('interests', __name__) # url_prefix='/interests'
 def interests(): 
     template_name = 'app/interests.html'
     username = g.user['username']
+    user_id = g.user['id']
 
     if request.method == 'POST':
-        sports = request.form.getlist('sport')
+        sports = request.form.getlist('sports')
         ministries = request.form.getlist('ministries')
         stem = request.form.getlist('stem')
         recreation = request.form.getlist('recreation')
 
         db = get_db()
         error = None
+
+        existing_interests = db.execute(
+            'SELECT id FROM UserInterests WHERE id = ?',
+            (user_id,)
+        ).fetchone()
+
+        if existing_interests:
+            # User has already selected interests, redirect to home page
+            return redirect(url_for("home.home"))
+        
+        # if not existing_interests:
+        #     return redirect(url_for("interests.interests"))
 
         # Compile all interests into one list
         interests = sports + ministries + stem + recreation
@@ -33,7 +46,6 @@ def interests():
 
         else: 
             # Need to store data from sports, ministries, STEM, and clubs into the user's database
-            user_id = g.user['id']
 
             try:
                 # Start transaction

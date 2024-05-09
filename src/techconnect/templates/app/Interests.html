@@ -3,17 +3,17 @@
 {% block content %}
     <h2>{% block title %}Select Some things you are interested in{% endblock %}</h2>
     <ul>
-        <label for="interests"> Select at least one: </label>
-        <form id="make_some_checkboxes" method="post">
+        <p class="lab1"> Select at least one: </p>
+        <form id="interest-form" method="post">
             <fieldset>
                 <legend>Sports</legend>
-                <input type="checkbox" id="football" name="sport" value="football">
+                <input type="checkbox" id="football" name="sports" value="Football">
                 <label for="football">Football</label><br>
-                <input type="checkbox" id="baseball" name="sport" value="baseball">
+                <input type="checkbox" id="baseball" name="sports" value="Baseball">
                 <label for="baseball">Baseball</label><br>
-                <input type="checkbox" id="basketball" name="sport" value="basketball">
+                <input type="checkbox" id="basketball" name="sports" value="Basketball">
                 <label for="basketball">Basketball</label><br>
-                <input type="checkbox" id="soccer" name="sport" value="soccer">
+                <input type="checkbox" id="soccer" name="sports" value="Soccer">
                 <label for="soccer">Soccer</label>
             </fieldset>
             <fieldset>
@@ -36,14 +36,14 @@
             </fieldset>
             <fieldset>
                 <legend>Clubs</legend>
-                <input type="checkbox" id="Esports" name="recreation" value="Esports">
+                <input type="checkbox" id="Esports" name="recreation" value="Latech Esports">
                 <label for="Esports">Esports</label><br>
                 <input type="checkbox" id="Chess Club" name="recreation" value="Chess Club">
                 <label for="Chess">Chess Club</label><br>
                 <input type="checkbox" id="Louisiana Tech Airsoft Organization" name="recreation" value="Louisiana Tech Airsoft Organization">
                 <label for="Louisiana Tech Airsoft Organization">Louisiana Tech Airsoft Organization</label>
             </fieldset>
-            <input type="submit" value="Submit" />
+            <input class='interest-sub' type="submit" value="Submit">
         </form>
     </ul>
 {% endblock %}

@@ -97,12 +97,13 @@ h1 {
     color: #fff;
     margin-top: 15px;
     border-radius: 100px;
+    border: none;
     height: 40px;
     width: 75%;
     align-self: center;
 }
 
 .submit-btn:hover {
-    background-color: #005187;
+    background-color: #0062a3;
     cursor: pointer;
 }
