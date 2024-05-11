@@ -27,6 +27,8 @@ def register():
             error = 'Email is required.'
         elif not password:
             error = 'Password is required.'
+        elif len(password) < 4: 
+            error = 'Password must be longer than 4 characters'
         elif password != confirm_password:
             error = 'Passwords do not match'
 
